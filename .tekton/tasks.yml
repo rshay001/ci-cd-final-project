@@ -50,12 +50,10 @@ spec:
   steps:
     - name: nosetests
       image: python:3.9-slim
-      workingDir: $(workspaces.source.path)
+      workingDir: /workspace/output
       script: |
           #!/bin/bash
           set -e
-          echo "Current dir: $(pwd)"
-          ls -la
           python -m pip install --upgrade pip wheel
           pip install -r requirements.txt
           nosetests $(params.args)
