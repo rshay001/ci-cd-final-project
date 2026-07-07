@@ -50,7 +50,7 @@ spec:
   steps:
     - name: nosetests
       image: python:3.9-slim
-      workingDir: $(workspaces.source.path)
+      workingDir: /workspace/output
       script: |
           #!/bin/bash
           set -e
